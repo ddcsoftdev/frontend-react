@@ -1,2 +1,11 @@
-// This line ensures the file is treated as a module
-export {};
+import Hero from "./Hero";
+
+
+export const Header = (() => {
+
+    return (
+        <>
+        <Hero/>
+        </>
+    );
+});

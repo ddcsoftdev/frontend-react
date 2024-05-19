@@ -1,2 +1,10 @@
-// This line ensures the file is treated as a module
-export {};
+import { Header } from "../../layout/Header";
+
+export const Home = (( ) => {
+
+    return (
+        <>
+        <Header/>
+        </>
+    );
+});
