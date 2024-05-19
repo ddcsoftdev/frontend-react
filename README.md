@@ -34,6 +34,9 @@ Build the project for production:
 ```bash
 npm run build
 ```
+## State Management
+
+State management is handled using Redux, providing a centralized store for application state and ensuring predictable state updates. Actions and reducers are used to manage and update the state.
 
 ## Components
 
@@ -86,11 +89,7 @@ The schema defines the structure and components of the UI. It's designed to be f
 2. **Breadcrumbs**: Show the user’s navigation path.
 3. **Tabs**: Switch between different views or content.
 
-## State Management
-
-State management is handled using Redux, providing a centralized store for application state and ensuring predictable state updates. Actions and reducers are used to manage and update the state.
-
-## Structure Example
+### Structure Example
 
 ```json
 {
