@@ -1,46 +1,137 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Frontend React
 
-## Available Scripts
+This repository contains the frontend code for our application built with React, featuring reusable components and a flexible schema for building dynamic UIs. State management is handled using Redux for predictable state updates and centralized application state.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Installation](#installation)
+- [Usage](#usage)
+- [Components](#components)
+- [Schema Description](#schema-description)
+- [State Management](#state-management)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Clone the repository and install dependencies:
 
-### `npm test`
+```bash
+git clone https://github.com/ddcsoftdev/frontend-react.git
+cd frontend-react
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+Start the development server:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Build the project for production:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm run build
+```
 
-### `npm run eject`
+## Components
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Key components used in this project:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Screen**: Main container for a page or view.
+- **Header**: Includes site logo, navigation links, and user account info.
+- **Footer**: Contains site-wide links and copyright info.
+- **Sidebar**: Contains navigation links or additional information.
+- **Section**: Groups related components.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Schema Description
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The schema defines the structure and components of the UI. It's designed to be flexible and extensible.
 
-## Learn More
+### Basic Layout Components
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Screen**: Main container for a page or view.
+2. **Header**: Includes site logo and navigation links.
+3. **Footer**: Contains site-wide links and copyright info.
+4. **Sidebar**: Contains navigation links or additional information.
+5. **Section**: A container for grouping related components.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Interactive Components
+
+1. **Button**: Clickable element for actions.
+2. **Form**: Contains input fields and submit actions.
+3. **Input (Text, Password, Submit, etc.)**: Various input fields within forms.
+4. **Table**: Displays data in a tabular format.
+5. **Chat**: Interactive messaging component.
+6. **Modal**: Popup dialog for additional information or actions.
+
+### Content Display Components
+
+1. **Text**: Simple text display.
+2. **Image**: Display images.
+3. **Video**: Embedding videos.
+4. **List**: Ordered or unordered lists.
+5. **Card**: Display content in a card format.
+
+### Advanced Interactive Components
+
+1. **Chart**: Display data visually in charts.
+2. **Calendar**: Show dates and events.
+3. **Slider**: Interactive slider for selecting values.
+
+### Navigation Components
+
+1. **Navigation Menu**: Primary or secondary navigation links.
+2. **Breadcrumbs**: Show the user’s navigation path.
+3. **Tabs**: Switch between different views or content.
+
+## State Management
+
+State management is handled using Redux, providing a centralized store for application state and ensuring predictable state updates. Actions and reducers are used to manage and update the state.
+
+## Structure Example
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://webapp.com/page-structure-json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["screen"]
+    },
+    "title": {
+      "type": "string"
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["header", "footer", "sidebar", "section"]
+          },
+          "title": { "type": "string" },
+          "logo": { "type": "string" },
+          "visibility": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["user", "admin", "guest", "editor"]
+            }
+          },
+          "components": {
+            "type": "array",
+            "items": { "$ref": "#" }
+          }
+        },
+        "required": ["type"]
+      }
+    }
+  },
+  "required": ["type", "title", "components"]
+}
+```
