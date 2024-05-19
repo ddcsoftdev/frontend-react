@@ -1,0 +1,21 @@
+{
+    "$id": "https://webapp.com/schemas/text.json",
+    "type": "object",
+    "properties": {
+      "type": {
+        "const": "text"
+      },
+      "content": {
+        "type": "string"
+      },
+      "styles": {
+        "type": "object",
+        "properties": {
+          "fontSize": { "type": "string" },
+          "color": { "type": "string" }
+        }
+      }
+    },
+    "required": ["type", "content"]
+  }
+  

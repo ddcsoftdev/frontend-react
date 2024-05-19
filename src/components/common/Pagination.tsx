@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import type React from 'react'
-import { Button } from './Button'
+import { Button } from './button/button'
 
 export function Pagination({
   'aria-label': ariaLabel = 'Page navigation',

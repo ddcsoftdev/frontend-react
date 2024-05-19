@@ -1,0 +1,29 @@
+{
+  "$id": "https://webapp.com/schemas/component.json",
+  "oneOf": [
+    { "$ref": "https://webapp.com/schemas/header.json" },
+    { "$ref": "https://webapp.com/schemas/footer.json" },
+    { "$ref": "https://webapp.com/schemas/sidebar.json" },
+    { "$ref": "https://webapp.com/schemas/section.json" },
+    { "$ref": "https://webapp.com/schemas/form.json" },
+    { "$ref": "https://webapp.com/schemas/input.json" },
+    { "$ref": "https://webapp.com/schemas/table.json" },
+    { "$ref": "https://webapp.com/schemas/dashboard.json" },
+    { "$ref": "https://webapp.com/schemas/chat.json" },
+    { "$ref": "https://webapp.com/schemas/text.json" },
+    { "$ref": "https://webapp.com/schemas/image.json" },
+    { "$ref": "https://webapp.com/schemas/video.json" },
+    { "$ref": "https://webapp.com/schemas/list.json" },
+    { "$ref": "https://webapp.com/schemas/card.json" },
+    { "$ref": "https://webapp.com/schemas/chart.json" },
+    { "$ref": "https://webapp.com/schemas/calendar.json" },
+    { "$ref": "https://webapp.com/schemas/slider.json" },
+    { "$ref": "https://webapp.com/schemas/navigationMenu.json" },
+    { "$ref": "https://webapp.com/schemas/breadcrumbs.json" },
+    { "$ref": "https://webapp.com/schemas/tabs.json" },
+    { "$ref": "https://webapp.com/schemas/drawer.json" },
+    { "$ref": "https://webapp.com/schemas/button.json" },
+    { "$ref": "https://webapp.com/schemas/modal.json" },
+    { "$ref": "https://webapp.com/schemas/blank.json" }
+  ]
+}

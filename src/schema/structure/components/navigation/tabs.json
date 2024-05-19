@@ -1,0 +1,27 @@
+{
+    "$id": "https://webapp.com/schemas/tabs.json",
+    "type": "object",
+    "properties": {
+      "type": {
+        "const": "tabs"
+      },
+      "tabs": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string" },
+            "content": { "type": "string" }
+          }
+        }
+      },
+      "styles": {
+        "type": "object",
+        "properties": {
+          "borderBottom": { "type": "string" }
+        }
+      }
+    },
+    "required": ["type", "tabs"]
+  }
+  

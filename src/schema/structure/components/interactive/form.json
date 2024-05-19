@@ -1,0 +1,53 @@
+{
+  "$id": "https://webapp.com/schemas/form.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "form"
+    },
+    "endpoint": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "$ref": "https://webapp.com/schemas/input.json",
+          "required": {
+            "type": "boolean"
+          },
+          "validation": {
+            "type": "object",
+            "properties": {
+              "minLength": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "maxLength": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "pattern": {
+                "type": "string"
+              }
+            },
+            "required": ["minLength", "maxLength"]
+          }
+        },
+        "required": ["$ref", "required", "validation"]
+      }
+    },
+    "visibility": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["guest", "user", "admin"]
+      }
+    }
+  },
+  "required": ["type", "endpoint", "method", "inputs"]
+}

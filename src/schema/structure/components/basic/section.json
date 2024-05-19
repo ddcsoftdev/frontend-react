@@ -1,0 +1,26 @@
+{
+  "$id": "https://webapp.com/schemas/section.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "section"
+    },
+    "title": {
+      "type": "string"
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "$ref": "https://webapp.com/schemas/component.json"
+      }
+    },
+    "visibility": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["user", "admin", "guest"]
+      }
+    }
+  },
+  "required": ["type", "title", "components"]
+}

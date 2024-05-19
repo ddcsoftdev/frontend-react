@@ -1,0 +1,34 @@
+{
+    "$id": "https://webapp.com/schemas/navigationMenu.json",
+    "type": "object",
+    "properties": {
+      "type": {
+        "const": "navigationMenu"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string" },
+            "path": { "type": "string" },
+            "visibility": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["user", "admin", "guest"]
+              }
+            }
+          }
+        }
+      },
+      "styles": {
+        "type": "object",
+        "properties": {
+          "background": { "type": "string" }
+        }
+      }
+    },
+    "required": ["type", "items"]
+  }
+  

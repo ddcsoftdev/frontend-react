@@ -1,0 +1,26 @@
+{
+    "$id": "https://webapp.com/schemas/list.json",
+    "type": "object",
+    "properties": {
+      "type": {
+        "const": "list"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "ordered": {
+        "type": "boolean"
+      },
+      "styles": {
+        "type": "object",
+        "properties": {
+          "paddingLeft": { "type": "string" }
+        }
+      }
+    },
+    "required": ["type", "items"]
+  }
+  

@@ -1,0 +1,28 @@
+{
+    "$id": "https://webapp.com/schemas/breadcrumbs.json",
+    "type": "object",
+    "properties": {
+      "type": {
+        "const": "breadcrumbs"
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string" },
+            "path": { "type": "string" }
+          }
+        }
+      },
+      "styles": {
+        "type": "object",
+        "properties": {
+          "padding": { "type": "string" },
+          "background": { "type": "string" }
+        }
+      }
+    },
+    "required": ["type", "items"]
+  }
+  

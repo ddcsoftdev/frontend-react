@@ -22,7 +22,7 @@ import {
 } from '@headlessui/react'
 import clsx from 'clsx'
 import type React from 'react'
-import { Button } from './Button'
+import { Button } from './button/button'
 import { Link } from './Link'
 
 export function Dropdown(props: HeadlessMenuProps) {

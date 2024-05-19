@@ -1,0 +1,27 @@
+{
+    "$id": "https://webapp.com/schemas/video.json",
+    "type": "object",
+    "properties": {
+      "type": {
+        "const": "video"
+      },
+      "src": {
+        "type": "string"
+      },
+      "controls": {
+        "type": "boolean"
+      },
+      "autoplay": {
+        "type": "boolean"
+      },
+      "styles": {
+        "type": "object",
+        "properties": {
+          "width": { "type": "string" },
+          "height": { "type": "string" }
+        }
+      }
+    },
+    "required": ["type", "src", "controls"]
+  }
+  

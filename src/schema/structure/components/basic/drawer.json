@@ -1,0 +1,56 @@
+{
+    "$id": "https://webapp.com/schemas/drawer.json",
+    "type": "object",
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": ["drawer"]
+      },
+      "title": {
+        "type": "string"
+      },
+      "position": {
+        "type": "string",
+        "enum": ["left", "right", "top", "bottom"]
+      },
+      "isOpen": {
+        "type": "boolean"
+      },
+      "toggleButton": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string", "enum": ["button"] },
+          "label": { "type": "string" },
+          "action": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string", "enum": ["toggle"] },
+              "target": { "type": "string" }
+            }
+          }
+        }
+      },
+      "components": {
+        "type": "array",
+        "items": { "$ref": "https://webapp.com/schemas/component.json" }
+      },
+      "styles": {
+        "type": "object",
+        "properties": {
+          "width": { "type": "string" },
+          "background": { "type": "string" },
+          "boxShadow": { "type": "string" }
+        }
+      },
+      "visibility": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": ["user", "admin", "guest", "editor"]
+        },
+        "description": "Defines who can see this component. If empty or not specified, visible to all."
+      }
+    },
+    "required": ["type"]
+  }
+  

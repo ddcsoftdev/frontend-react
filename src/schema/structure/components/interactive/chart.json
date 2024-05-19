@@ -1,0 +1,44 @@
+{
+    "$id": "https://webapp.com/schemas/chart.json",
+    "type": "object",
+    "properties": {
+      "type": {
+        "const": "chart"
+      },
+      "chartType": {
+        "type": "string"
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "labels": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "datasets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": { "type": "string" },
+                "data": { "type": "array", "items": { "type": "number" } },
+                "backgroundColor": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      },
+      "options": {
+        "type": "object"
+      },
+      "styles": {
+        "type": "object",
+        "properties": {
+          "width": { "type": "string" },
+          "height": { "type": "string" }
+        }
+      }
+    },
+    "required": ["type", "chartType", "data"]
+  }
+  

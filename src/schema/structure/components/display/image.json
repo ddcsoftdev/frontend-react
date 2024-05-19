@@ -1,0 +1,24 @@
+{
+    "$id": "https://webapp.com/schemas/image.json",
+    "type": "object",
+    "properties": {
+      "type": {
+        "const": "image"
+      },
+      "src": {
+        "type": "string"
+      },
+      "alt": {
+        "type": "string"
+      },
+      "styles": {
+        "type": "object",
+        "properties": {
+          "width": { "type": "string" },
+          "height": { "type": "string" }
+        }
+      }
+    },
+    "required": ["type", "src", "alt"]
+  }
+  

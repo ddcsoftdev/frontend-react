@@ -1,0 +1,16 @@
+{
+    "$id": "https://webapp.com/schemas/blank.json",
+    "type": "object",
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": ["blank"]
+      },
+      "height": {
+        "type": "string",
+        "description": "Specifies the height of the blank space, e.g., '20px', '1em'."
+      }
+    },
+    "required": ["type"]
+  }
+  

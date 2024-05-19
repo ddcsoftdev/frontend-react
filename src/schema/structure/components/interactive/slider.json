@@ -1,0 +1,29 @@
+{
+    "$id": "https://webapp.com/schemas/slider.json",
+    "type": "object",
+    "properties": {
+      "type": {
+        "const": "slider"
+      },
+      "min": {
+        "type": "number"
+      },
+      "max": {
+        "type": "number"
+      },
+      "step": {
+        "type": "number"
+      },
+      "value": {
+        "type": "number"
+      },
+      "styles": {
+        "type": "object",
+        "properties": {
+          "width": { "type": "string" }
+        }
+      }
+    },
+    "required": ["type", "min", "max", "step", "value"]
+  }
+  

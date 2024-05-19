@@ -1,0 +1,32 @@
+{
+    "$id": "https://webapp.com/schemas/sidebar.json",
+    "type": "object",
+    "properties": {
+      "type": {
+        "const": "sidebar"
+      },
+      "title": {
+        "type": "string"
+      },
+      "navigation": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string" },
+            "icon": { "type": "string" },
+            "path": { "type": "string" },
+            "visibility": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["admin"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "required": ["type", "title", "navigation"]
+  }
+  
