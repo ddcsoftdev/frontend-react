@@ -32,7 +32,7 @@
       },
       "components": {
         "type": "array",
-        "items": { "$ref": "https://webapp.com/schemas/component.json" }
+        "items": { "$ref": "https://webapp.com/schemas/components.json" }
       },
       "styles": {
         "type": "object",

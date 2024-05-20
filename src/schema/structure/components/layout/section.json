@@ -11,7 +11,7 @@
     "components": {
       "type": "array",
       "items": {
-        "$ref": "https://webapp.com/schemas/component.json"
+        "$ref": "https://webapp.com/schemas/components.json"
       }
     },
     "visibility": {

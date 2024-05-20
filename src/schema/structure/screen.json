@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://webapp.com/schemas/screen",
+  "$id": "screen.json",
   "type": "object",
   "properties": {
     "type": {
@@ -22,7 +22,7 @@
     "components": {
       "type": "array",
       "items": {
-        "$ref": "https://webapp.com/schemas/component.json"
+        "$ref": "./components.json"
       }
     }
   },

@@ -4,14 +4,17 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import { DeviceProvider } from "./context/device-context/device-context";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
+<Provider store={store}>
+    <DeviceProvider>
+      <App />
+    </DeviceProvider>
+  </Provider>,
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,11 +1,11 @@
 import './App.css';
 import React from 'react';
-import { Page } from './components/pages/page/page';
+import LayoutScreenComponent from './components/layout/screen';
 
 function App() {
   return (
     <div className="App">
-      <Page/>
+    <LayoutScreenComponent title={'Hola'} />
     </div>
   );
 }
