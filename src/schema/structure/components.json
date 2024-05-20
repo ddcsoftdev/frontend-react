@@ -1,5 +1,5 @@
 {
-  "$id": "components.json",
+  "$id": "https://webapp.com/schemas/components.json",
   "oneOf": [
     { "$ref": "./layout/header.json" },
     { "$ref": "./layout/footer.json" },
