@@ -11,7 +11,7 @@
     "components": {
       "type": "array",
       "items": {
-        "$ref": "https://webapp.com/schemas/components.json"
+        "$ref": "./components.json"
       }
     },
     "visibility": {
@@ -20,6 +20,15 @@
         "type": "string",
         "enum": ["user", "admin", "guest"]
       }
+    },
+    "styles": {
+      "type": "object",
+      "properties": {
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" }
+      },
+      "additionalProperties": false
     }
   },
   "required": ["type", "title", "components"]

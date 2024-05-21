@@ -1,26 +1,28 @@
 {
-    "$id": "https://webapp.com/schemas/list.json",
-    "type": "object",
-    "properties": {
-      "type": {
-        "const": "list"
-      },
+  "$id": "https://webapp.com/schemas/list.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "list"
+    },
+    "items": {
+      "type": "array",
       "items": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "ordered": {
-        "type": "boolean"
-      },
-      "styles": {
-        "type": "object",
-        "properties": {
-          "paddingLeft": { "type": "string" }
-        }
+        "type": "string"
       }
     },
-    "required": ["type", "items"]
-  }
-  
+    "ordered": {
+      "type": "boolean"
+    },
+    "styles": {
+      "type": "object",
+      "properties": {
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["type", "items"]
+}

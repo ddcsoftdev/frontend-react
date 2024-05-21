@@ -1,66 +1,74 @@
 {
-    "$id": "https://webapp.com/schemas/dashboard.json",
-    "type": "object",
-    "properties": {
-      "type": {
-        "const": "dashboard"
-      },
-      "title": {
-        "type": "string"
-      },
-      "widgets": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "type": {
-              "type": "string",
-              "enum": ["summary", "chart", "table"]
-            },
-            "title": { "type": "string" },
-            "value": { "type": "integer" },
-            "icon": { "type": "string" },
-            "chartType": { "type": "string" },
-            "data": {
-              "type": "object",
-              "properties": {
-                "labels": { "type": "array", "items": { "type": "string" } },
-                "datasets": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "label": { "type": "string" },
-                      "data": { "type": "array", "items": { "type": "number" } },
-                      "backgroundColor": { "type": "array", "items": { "type": "string" } }
-                    }
+  "$id": "https://webapp.com/schemas/dashboard.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "dashboard"
+    },
+    "title": {
+      "type": "string"
+    },
+    "widgets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["summary", "chart", "table"]
+          },
+          "title": { "type": "string" },
+          "value": { "type": "integer" },
+          "icon": { "type": "string" },
+          "chartType": { "type": "string" },
+          "data": {
+            "type": "object",
+            "properties": {
+              "labels": { "type": "array", "items": { "type": "string" } },
+              "datasets": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": { "type": "string" },
+                    "data": { "type": "array", "items": { "type": "number" } },
+                    "backgroundColor": { "type": "array", "items": { "type": "string" } }
                   }
                 }
               }
-            },
-            "endpoint": { "type": "string" },
-            "columns": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "title": { "type": "string" },
-                  "field": { "type": "string" },
-                  "type": { "type": "string" }
-                }
+            }
+          },
+          "endpoint": { "type": "string" },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": { "type": "string" },
+                "field": { "type": "string" },
+                "type": { "type": "string" }
               }
             }
           }
         }
-      },
-      "visibility": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "enum": ["admin"]
-        }
       }
     },
-    "required": ["type", "title", "widgets"]
-  }
-  
+    "visibility": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["admin"]
+      }
+    },
+    "styles": {
+      "type": "object",
+      "properties": {
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["type", "title", "widgets"]
+}

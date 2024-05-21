@@ -1,29 +1,32 @@
 {
-    "$id": "https://webapp.com/schemas/slider.json",
-    "type": "object",
-    "properties": {
-      "type": {
-        "const": "slider"
-      },
-      "min": {
-        "type": "number"
-      },
-      "max": {
-        "type": "number"
-      },
-      "step": {
-        "type": "number"
-      },
-      "value": {
-        "type": "number"
-      },
-      "styles": {
-        "type": "object",
-        "properties": {
-          "width": { "type": "string" }
-        }
-      }
+  "$id": "https://webapp.com/schemas/slider.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "slider"
     },
-    "required": ["type", "min", "max", "step", "value"]
-  }
-  
+    "min": {
+      "type": "number"
+    },
+    "max": {
+      "type": "number"
+    },
+    "step": {
+      "type": "number"
+    },
+    "value": {
+      "type": "number"
+    },
+    "styles": {
+      "type": "object",
+      "properties": {
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" },
+        "width": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["type", "min", "max", "step", "value"]
+}

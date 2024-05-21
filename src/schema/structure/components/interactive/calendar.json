@@ -1,29 +1,30 @@
 {
-    "$id": "https://webapp.com/schemas/calendar.json",
-    "type": "object",
-    "properties": {
-      "type": {
-        "const": "calendar"
-      },
-      "events": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "title": { "type": "string" },
-            "start": { "type": "string" },
-            "end": { "type": "string" }
-          }
-        }
-      },
-      "styles": {
+  "$id": "https://webapp.com/schemas/calendar.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "calendar"
+    },
+    "events": {
+      "type": "array",
+      "items": {
         "type": "object",
         "properties": {
-          "width": { "type": "string" },
-          "height": { "type": "string" }
+          "title": { "type": "string" },
+          "start": { "type": "string" },
+          "end": { "type": "string" }
         }
       }
     },
-    "required": ["type", "events"]
-  }
-  
+    "styles": {
+      "type": "object",
+      "properties": {
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["type", "events"]
+}

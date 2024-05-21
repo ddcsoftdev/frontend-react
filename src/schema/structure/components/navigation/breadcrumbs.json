@@ -1,28 +1,31 @@
 {
-    "$id": "https://webapp.com/schemas/breadcrumbs.json",
-    "type": "object",
-    "properties": {
-      "type": {
-        "const": "breadcrumbs"
-      },
+  "$id": "https://webapp.com/schemas/breadcrumbs.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "breadcrumbs"
+    },
+    "items": {
+      "type": "array",
       "items": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "title": { "type": "string" },
-            "path": { "type": "string" }
-          }
-        }
-      },
-      "styles": {
         "type": "object",
         "properties": {
-          "padding": { "type": "string" },
-          "background": { "type": "string" }
+          "title": { "type": "string" },
+          "path": { "type": "string" }
         }
       }
     },
-    "required": ["type", "items"]
-  }
-  
+    "styles": {
+      "type": "object",
+      "properties": {
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" },
+        "padding": { "type": "string" },
+        "background": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["type", "items"]
+}

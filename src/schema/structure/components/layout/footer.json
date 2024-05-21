@@ -1,33 +1,36 @@
 {
-    "$id": "https://webapp.com/schemas/footer.json",
-    "type": "object",
-    "properties": {
-      "type": {
-        "const": "footer"
-      },
-      "text": {
-        "type": "string"
-      },
-      "links": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "title": { "type": "string" },
-            "path": { "type": "string" }
-          }
-        }
-      },
-      "styles": {
+  "$id": "https://webapp.com/schemas/footer.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "footer"
+    },
+    "text": {
+      "type": "string"
+    },
+    "links": {
+      "type": "array",
+      "items": {
         "type": "object",
         "properties": {
-          "background": { "type": "string" },
-          "color": { "type": "string" },
-          "padding": { "type": "string" },
-          "textAlign": { "type": "string" }
+          "title": { "type": "string" },
+          "path": { "type": "string" }
         }
       }
     },
-    "required": ["type", "text"]
-  }
-  
+    "styles": {
+      "type": "object",
+      "properties": {
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" },
+        "background": { "type": "string" },
+        "color": { "type": "string" },
+        "padding": { "type": "string" },
+        "textAlign": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["type", "text"]
+}

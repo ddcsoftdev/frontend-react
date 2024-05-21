@@ -1,27 +1,30 @@
 {
-    "$id": "https://webapp.com/schemas/video.json",
-    "type": "object",
-    "properties": {
-      "type": {
-        "const": "video"
-      },
-      "src": {
-        "type": "string"
-      },
-      "controls": {
-        "type": "boolean"
-      },
-      "autoplay": {
-        "type": "boolean"
-      },
-      "styles": {
-        "type": "object",
-        "properties": {
-          "width": { "type": "string" },
-          "height": { "type": "string" }
-        }
-      }
+  "$id": "https://webapp.com/schemas/video.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "video"
     },
-    "required": ["type", "src", "controls"]
-  }
-  
+    "src": {
+      "type": "string"
+    },
+    "controls": {
+      "type": "boolean"
+    },
+    "autoplay": {
+      "type": "boolean"
+    },
+    "styles": {
+      "type": "object",
+      "properties": {
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" },
+        "width": { "type": "string" },
+        "height": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["type", "src", "controls"]
+}

@@ -13,11 +13,11 @@
     "styles": {
       "type": "object",
       "properties": {
-        "width": { "type": "string" },
-        "maxWidth": { "type": "integer" },
-        "marginLeft": { "type": "string" },
-        "marginRight": { "type": "string" }
-      }
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" }
+      },
+      "additionalProperties": false
     },
     "components": {
       "type": "array",

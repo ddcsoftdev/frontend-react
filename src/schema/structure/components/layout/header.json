@@ -1,42 +1,50 @@
 {
-    "$id": "https://webapp.com/schemas/header.json",
-    "type": "object",
-    "properties": {
-      "type": {
-        "const": "header"
-      },
-      "title": {
-        "type": "string"
-      },
-      "logo": {
-        "type": "string"
-      },
-      "navigation": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "title": { "type": "string" },
-            "path": { "type": "string" },
-            "icon": { "type": "string" },
-            "visibility": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": ["user", "admin", "guest"]
-              }
+  "$id": "https://webapp.com/schemas/header.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "header"
+    },
+    "title": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "string"
+    },
+    "navigation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "path": { "type": "string" },
+          "icon": { "type": "string" },
+          "visibility": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["user", "admin", "guest"]
             }
           }
         }
-      },
-      "visibility": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "enum": ["user", "admin", "guest"]
-        }
       }
     },
-    "required": ["type", "title"]
-  }
-  
+    "visibility": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["user", "admin", "guest"]
+      }
+    },
+    "styles": {
+      "type": "object",
+      "properties": {
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["type", "title"]
+}

@@ -38,6 +38,7 @@ const schemaPaths = [
   "navigation/breadcrumbs.json",
   "navigation/navigation.json",
   "navigation/tabs.json",
+  "style/style.json",
   "components.json",
   "screen.json"
 ];

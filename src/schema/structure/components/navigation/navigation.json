@@ -1,34 +1,37 @@
 {
-    "$id": "https://webapp.com/schemas/navigationMenu.json",
-    "type": "object",
-    "properties": {
-      "type": {
-        "const": "navigationMenu"
-      },
+  "$id": "https://webapp.com/schemas/navigationMenu.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "navigationMenu"
+    },
+    "items": {
+      "type": "array",
       "items": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "title": { "type": "string" },
-            "path": { "type": "string" },
-            "visibility": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": ["user", "admin", "guest"]
-              }
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "path": { "type": "string" },
+          "visibility": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["user", "admin", "guest"]
             }
           }
         }
-      },
-      "styles": {
-        "type": "object",
-        "properties": {
-          "background": { "type": "string" }
-        }
       }
     },
-    "required": ["type", "items"]
-  }
-  
+    "styles": {
+      "type": "object",
+      "properties": {
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" },
+        "background": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["type", "items"]
+}

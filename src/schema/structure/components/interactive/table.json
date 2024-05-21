@@ -46,7 +46,16 @@
     },
     "editableFields": {
       "type": "array",
-      "items": { "$ref": "https://webapp.com/schemas/input.json" }
+      "items": { "$ref": "interactive/input.json" }
+    },
+    "styles": {
+      "type": "object",
+      "properties": {
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" }
+      },
+      "additionalProperties": false
     }
   },
   "required": ["type", "endpoint", "method", "columns"]

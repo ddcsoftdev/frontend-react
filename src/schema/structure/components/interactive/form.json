@@ -16,7 +16,7 @@
       "items": {
         "type": "object",
         "properties": {
-          "$ref": "https://webapp.com/schemas/input.json",
+          "$ref": "interactive/input.json",
           "required": {
             "type": "boolean"
           },
@@ -47,6 +47,15 @@
         "type": "string",
         "enum": ["guest", "user", "admin"]
       }
+    },
+    "styles": {
+      "type": "object",
+      "properties": {
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" }
+      },
+      "additionalProperties": false
     }
   },
   "required": ["type", "endpoint", "method", "inputs"]

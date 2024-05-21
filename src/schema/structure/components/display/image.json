@@ -1,24 +1,25 @@
 {
-    "$id": "https://webapp.com/schemas/image.json",
-    "type": "object",
-    "properties": {
-      "type": {
-        "const": "image"
-      },
-      "src": {
-        "type": "string"
-      },
-      "alt": {
-        "type": "string"
-      },
-      "styles": {
-        "type": "object",
-        "properties": {
-          "width": { "type": "string" },
-          "height": { "type": "string" }
-        }
-      }
+  "$id": "https://webapp.com/schemas/image.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "image"
     },
-    "required": ["type", "src", "alt"]
-  }
-  
+    "src": {
+      "type": "string"
+    },
+    "alt": {
+      "type": "string"
+    },
+    "styles": {
+      "type": "object",
+      "properties": {
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["type", "src", "alt"]
+}

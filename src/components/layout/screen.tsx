@@ -1,6 +1,7 @@
 import React from "react";
 import { useDeviceContext } from "../../context/device-context/device-context";
 import { compileAndValidate } from "../../schema/validation/schema-validation";
+import LayoutHeaderComponent from "./header";
 
 //props definition
 interface ScreenProps {
@@ -12,14 +13,30 @@ interface ScreenProps {
 type Props = ScreenProps;
 
 const LayoutScreenComponent = (props: Props) => {
-  
-  //validate props against screen schema
+  //validate props against schema
   compileAndValidate(props.type ? props.type : 'screen', props)
 
-  const type = props.type;
-  const title = props.title;
-  const styles = props.styles;
-  const components = props.components;
+  const { type, title, styles, components } = props;
+  const { device } = useDeviceContext();
+  
+  //TODO: TESTING
+  const exampleHeader = {
+    type: "header",
+    title: "Example Header",
+    logo: "logo.png",
+    navigation: [
+      { title: "Home", path: "/", visibility: ["user", "guest"] },
+      { title: "Admin", path: "/admin", visibility: ["admin"] }
+    ],
+    styles: {
+      desktop: { background: "blue"},
+      tablet: { background: "green" },
+      mobile: { background: "red" }
+    }
+  };
+  let test = components || [];
+  test?.push(exampleHeader);
+  test?.push(exampleHeader);
 
   //render components
   const renderComponents = (components: any) => {
@@ -30,19 +47,18 @@ const LayoutScreenComponent = (props: Props) => {
   //render a component
   const renderComponent = (component: any, index: number) => {
     //React.Fragment to append all components
-    /* <React.Fragment key={index}>
+    return (
+    <React.Fragment key={index}>
       {component.type === "header" && <LayoutHeaderComponent {...component} />}
-      {component.type === "footer" && <LayoutFooterComponent {...component} />}
-      {component.type === "sidebar" && <LayoutSidebarComponent {...component} />}
-      {component.type === "section" && <LayoutSectionComponent {...component} />}
-      {component.type === "drawer" && <LayoutDrawerComponent {...component} />}
-    </React.Fragment>;*/
+    </React.Fragment>
+    )
   };
-  const { device } = useDeviceContext();
+
   console.log(device);
   return (
     <div>
       <p>Current device: {device}</p>
+     {renderComponents(test)}
     </div>
   );
 };

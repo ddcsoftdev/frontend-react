@@ -1,78 +1,76 @@
 {
-    "$id": "https://webapp.com/schemas/modal.json",
-    "type": "object",
-    "properties": {
-      "type": {
-        "type": "string",
-        "enum": ["modal"]
-      },
-      "title": {
-        "type": "string"
-      },
-      "content": {
-        "type": "string"
-      },
-      "actions": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "type": {
-              "type": "string",
-              "enum": ["button"]
-            },
-            "label": {
-              "type": "string"
-            },
-            "action": {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "enum": ["submit", "close", "redirect", "openDrawer", "toggle"]
-                },
-                "endpoint": {
-                  "type": "string"
-                },
-                "target": {
-                  "type": "string"
-                },
-                "path": {
-                  "type": "string"
-                },
-                "method": {
-                  "type": "string"
-                }
-              },
-              "required": ["type"]
-            }
-          },
-          "required": ["type", "label", "action"]
-        }
-      },
-      "components": {
-        "type": "array",
-        "items": { "$ref": "https://webapp.com/schemas/components.json" }
-      },
-      "styles": {
+  "$id": "https://webapp.com/schemas/modal.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["modal"]
+    },
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
         "type": "object",
         "properties": {
-          "width": { "type": "string" },
-          "padding": { "type": "string" },
-          "background": { "type": "string" },
-          "borderRadius": { "type": "string" },
-          "boxShadow": { "type": "string" }
-        }
-      },
-      "visibility": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "enum": ["user", "admin", "guest", "editor"]
+          "type": {
+            "type": "string",
+            "enum": ["button"]
+          },
+          "label": {
+            "type": "string"
+          },
+          "action": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["submit", "close", "redirect", "openDrawer", "toggle"]
+              },
+              "endpoint": {
+                "type": "string"
+              },
+              "target": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              }
+            },
+            "required": ["type"]
+          }
         },
-        "description": "Defines who can see this component. If empty or not specified, visible to all."
+        "required": ["type", "label", "action"]
       }
     },
-    "required": ["type", "title", "content", "actions"]
-  }
-  
+    "components": {
+      "type": "array",
+      "items": { "$ref": "./components.json" }
+    },
+    "styles": {
+      "type": "object",
+      "properties": {
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" }
+      },
+      "additionalProperties": false
+    },
+    "visibility": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["user", "admin", "guest", "editor"]
+      },
+      "description": "Defines who can see this component. If empty or not specified, visible to all."
+    }
+  },
+  "required": ["type", "title", "content", "actions"]
+}

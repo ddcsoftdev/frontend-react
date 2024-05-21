@@ -1,36 +1,44 @@
 {
-    "$id": "https://webapp.com/schemas/button.json",
-    "type": "object",
-    "properties": {
-      "type": {
-        "type": "string",
-        "enum": ["button"]
-      },
-      "label": {
-        "type": "string"
-      },
-      "action": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": ["submit", "redirect", "openDrawer", "toggle", "api"]
-          },
-          "target": {
-            "type": "string"
-          },
-          "path": {
-            "type": "string"
-          },
-          "method": {
-            "type": "string"
-          },
-          "endpoint": {
-            "type": "string"
-          }
+  "$id": "https://webapp.com/schemas/button.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["button"]
+    },
+    "label": {
+      "type": "string"
+    },
+    "action": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["submit", "redirect", "openDrawer", "toggle", "api"]
+        },
+        "target": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "endpoint": {
+          "type": "string"
         }
       }
     },
-    "required": ["type", "label", "action"]
-  }
-  
+    "styles": {
+      "type": "object",
+      "properties": {
+        "desktop": { "$ref": "./style/style.json" },
+        "tablet": { "$ref": "./style/style.json" },
+        "mobile": { "$ref": "./style/style.json" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["type", "label", "action"]
+}
